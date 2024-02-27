@@ -1,0 +1,24 @@
+<div class="card mb-3">
+  <img src="{{paslon.photo}}" class='object-fit-sm-cover rounded' height='300px' alt="{{paslon.photo}}" title="{{paslon.photo}}">
+  <div class="card-body">
+    <h5 class="card-title">Nomor Urut {{paslon.nomor}}</h5>
+    <p class="card-text">{{paslon.namaPaslon}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item mt-2 mb-2">Moto : {{ paslon.moto }}</li>
+  </ul>
+  <div class="card-body row">
+    <div class="col-sm-6">Jumlah Vote</div>
+    <div class="col-sm-6 d-flex justify-content-end">
+      <span class="badge bg-success">{{ paslon.votes }}</span>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item mt-2 mb-2">
+      <div class="btn-group w-100" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" (click)="voteUp()">Vote Up</button>
+        <button type="button" class="btn btn-danger" (click)="voteDown()">Vote Down</button>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,25 @@
+<h4>Edit Category</h4>
+<div *ngIf="category">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div class="mb-3">
+        <label class="form-label">Category Id</label>
+        <input type="number" class="form-control" formControlName="category_id">
+        <div *ngIf="submitted && form.controls['category_id'].errors" class="error" readonly>
+          <div class="form-text text-danger" *ngIf="form.controls['category_id'].errors?.['required']">Tidak Boleh Kosong</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Category Name</label>
+        <input type="text" class="form-control" formControlName="category_name">
+        <div *ngIf="submitted && form.controls['category_name'].errors" class="error">
+          <div class="form-text text-danger" *ngIf="form.controls['category_name'].errors?.['required']">Tidak Boleh Kosong</div>
+        </div>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-danger" [routerLink]="['/category']">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

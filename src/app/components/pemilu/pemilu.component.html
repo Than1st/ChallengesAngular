@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="card mb-3" style="width: 50rem;">
+    <ul class="list-group list-group-flush mt-2">
+      <li class="list-group-item">
+        <h4>Add Pasangan Calon</h4>
+      </li>
+      <li class="list-group-item">
+        <form class="mb-3" action="" method="post">
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" name="nomor" id="nomor" placeholder="" #newNomor>
+            <label for="nomor">Nomor</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="paslon" id="paslon" placeholder="" #newPaslon>
+            <label for="paslon">Nama Paslon</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="photo" id="photo" placeholder="" #newPhoto>
+            <label for="photo">Link Photo</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="moto" id="moto" placeholder="" #newMoto>
+            <label for="moto">Moto</label>
+          </div>
+          <button (click)="addPaslon(
+            newNomor,
+            newPaslon,
+            newPhoto,
+            newMoto
+          )" class="btn btn-primary w-100 p-3">Submit</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4" *ngFor="let paslon of sortPaslon()" style="list-style: none;">
+    <app-paslon [paslon]="paslon"></app-paslon>
+  </div>
+</div>
+

@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="card mb-3" style="width: 50rem;">
+    <ul class="list-group list-group-flush mt-2">
+      <li class="list-group-item">
+        <h4>Edit Product</h4>
+      </li>
+      <li class="list-group-item" *ngIf="product">
+        <form class="mb-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="product_id" id="product_id" placeholder="" readonly>
+            <label for="product_id">Product Id</label>
+            <div *ngIf="submitted && form.controls['product_id'].errors" class="error">
+              <div class="form-text text-danger" *ngIf="form.controls['product_id'].errors?.['required']">Tidak Boleh Kosong</div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="product_name" id="product_name" placeholder="">
+            <label for="product_name">Product Name</label>
+            <div *ngIf="submitted && form.controls['product_name'].errors" class="error">
+              <div class="form-text text-danger" *ngIf="form.controls['product_name'].errors?.['required']">Tidak Boleh Kosong</div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="product_photo" id="product_photo" placeholder="">
+            <label for="product_photo">Link Photo</label>
+            <div *ngIf="submitted && form.controls['product_photo'].errors" class="error">
+              <div class="form-text text-danger" *ngIf="form.controls['product_photo'].errors?.['required']">Tidak Boleh Kosong</div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" formControlName="product_price" id="product_price" placeholder="">
+            <label for="product_price">Product Price</label>
+            <div *ngIf="submitted && form.controls['product_price'].errors" class="error">
+              <div class="form-text text-danger" *ngIf="form.controls['product_price'].errors?.['required']">Tidak Boleh Kosong</div>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" formControlName="product_stock" id="product_stock" placeholder="">
+            <label for="product_stock">Product Stock</label>
+            <div *ngIf="submitted && form.controls['product_stock'].errors" class="error">
+              <div class="form-text text-danger" *ngIf="form.controls['product_stock'].errors?.['required']">Tidak Boleh Kosong</div>
+            </div>
+          </div>
+          <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <button type="submit" class="btn btn-primary text-white">Submit</button>
+            <button type="button" class="btn btn-danger">Cancel</button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>

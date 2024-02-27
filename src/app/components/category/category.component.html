@@ -1,0 +1,27 @@
+<h4 class="mb-3">Categories</h4>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-3" (click)="addCategory()">
+  Add Category
+</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Category</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let cate of categories">
+  <tr>
+    <th scope="row">{{ cate.id }}</th>
+    <td>{{ cate.categoryName }}</td>
+    <td>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-warning" (click)="editCategory(cate.id)">Update</button>
+        <button type="button" class="btn btn-danger" (click)="deleteCategory(cate)">Delete</button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+<h4>Add Category</h4>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <div class="mb-3">
+      <label class="form-label">Category</label>
+      <input type="text" class="form-control" formControlName="category_name">
+      <div *ngIf="submitted && form.controls['category_name'].errors" class="error">
+        <div id="emailHelp" class="form-text text-danger" *ngIf="form.controls['category_name'].errors?.['required']">Tidak Boleh Kosong</div>
+      </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="submit" class="btn btn-primary">Add</button>
+      <button type="button" class="btn btn-danger" [routerLink]="['/category']">Cancel</button>
+    </div>
+  </div>
+</form>
